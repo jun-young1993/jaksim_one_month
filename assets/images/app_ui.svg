@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="300" height="600" fill="#ffffff" />
+  
+  <!-- 상단바 -->
+  <rect x="0" y="0" width="300" height="60" fill="url(#grad1)" />
+  <text x="150" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    작심한달
+  </text>
+  
+  <!-- 목표 리스트 -->
+  <g transform="translate(20, 80)">
+    <!-- 목표 1 -->
+    <rect width="260" height="80" fill="#f8f9fa" rx="10" ry="10" stroke="#e9ecef" stroke-width="1" />
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529">
+      매일 10분 책읽기
+    </text>
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">
+      진행률: 40%
+    </text>
+    <rect x="20" y="65" width="220" height="6" fill="#e9ecef" rx="3" ry="3" />
+    <rect x="20" y="65" width="88" height="6" fill="#4A90E2" rx="3" ry="3" />
+  </g>
+
+  <g transform="translate(20, 180)">
+    <!-- 목표 2 -->
+    <rect width="260" height="80" fill="#f8f9fa" rx="10" ry="10" stroke="#e9ecef" stroke-width="1" />
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529">
+      매일 운동 20분
+    </text>
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">
+      진행률: 60%
+    </text>
+    <rect x="20" y="65" width="220" height="6" fill="#e9ecef" rx="3" ry="3" />
+    <rect x="20" y="65" width="132" height="6" fill="#4A90E2" rx="3" ry="3" />
+  </g>
+
+  <!-- 하단 버튼 -->
+  <g transform="translate(100, 500)">
+    <rect width="100" height="40" fill="#4A90E2" rx="20" ry="20" />
+    <text x="50" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+      + 목표 추가
+    </text>
+  </g>
+</svg> 

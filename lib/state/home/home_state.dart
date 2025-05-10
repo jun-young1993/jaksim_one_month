@@ -1,0 +1,15 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'home_state.freezed.dart';
+
+@freezed
+class HomeState with _$HomeState {
+  const factory HomeState({
+    @Default(false) bool isLoading,
+    @Default(false) bool isError,
+    @Default(false) bool isSuccess,
+    @Default(false) bool isInitial,
+  }) = _HomeState;
+
+  factory HomeState.initilize() => const HomeState();
+}
