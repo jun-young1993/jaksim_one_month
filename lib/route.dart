@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_common/widgets/fade_route.dart';
-import 'package:jaksim_one_month/ui/home/home_screen.dart';
 import 'package:jaksim_one_month/ui/main/main_screen.dart';
 
 enum Routes { home, login, signup, main }

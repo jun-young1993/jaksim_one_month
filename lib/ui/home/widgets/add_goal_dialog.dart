@@ -13,11 +13,26 @@ class _AddGoalDialogState extends State<AddGoalDialog> {
   int _duration = 30;
   bool _isGroup = false;
   int _maxParticipants = 10;
+  DateTime _startDate = DateTime.now();
 
   @override
   void dispose() {
     _titleController.dispose();
     super.dispose();
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _startDate,
+      firstDate: DateTime.now(),
+      lastDate: DateTime.now().add(const Duration(days: 365)),
+    );
+    if (picked != null && picked != _startDate) {
+      setState(() {
+        _startDate = picked;
+      });
+    }
   }
 
   @override
@@ -54,6 +69,27 @@ class _AddGoalDialogState extends State<AddGoalDialog> {
                   }
                   return null;
                 },
+              ),
+              const SizedBox(height: 16),
+              // 시작일시 선택 필드
+              InkWell(
+                onTap: () => _selectDate(context),
+                child: InputDecorator(
+                  decoration: const InputDecoration(
+                    labelText: '시작일시',
+                    border: OutlineInputBorder(),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '${_startDate.year}년 ${_startDate.month}월 ${_startDate.day}일',
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                      const Icon(Icons.calendar_today),
+                    ],
+                  ),
+                ),
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<int>(
@@ -127,12 +163,12 @@ class _AddGoalDialogState extends State<AddGoalDialog> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // TODO: 목표 생성 로직
                         Navigator.pop(context, {
                           'title': _titleController.text,
                           'duration': _duration,
                           'isGroup': _isGroup,
                           'maxParticipants': _isGroup ? _maxParticipants : null,
+                          'startDate': _startDate,
                         });
                       }
                     },

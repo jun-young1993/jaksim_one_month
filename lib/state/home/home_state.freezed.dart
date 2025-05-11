@@ -12,15 +12,13 @@ part of 'home_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
-  bool get isError => throw _privateConstructorUsedError;
-  bool get isSuccess => throw _privateConstructorUsedError;
-  bool get isInitial => throw _privateConstructorUsedError;
+  AppException? get error => throw _privateConstructorUsedError;
+  User? get user => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -34,7 +32,10 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({bool isLoading, bool isError, bool isSuccess, bool isInitial});
+  $Res call({bool isLoading, AppException? error, User? user});
+
+  $AppExceptionCopyWith<$Res>? get error;
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -53,35 +54,51 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? isError = null,
-    Object? isSuccess = null,
-    Object? isInitial = null,
+    Object? error = freezed,
+    Object? user = freezed,
   }) {
-    return _then(
-      _value.copyWith(
-            isLoading:
-                null == isLoading
-                    ? _value.isLoading
-                    : isLoading // ignore: cast_nullable_to_non_nullable
-                        as bool,
-            isError:
-                null == isError
-                    ? _value.isError
-                    : isError // ignore: cast_nullable_to_non_nullable
-                        as bool,
-            isSuccess:
-                null == isSuccess
-                    ? _value.isSuccess
-                    : isSuccess // ignore: cast_nullable_to_non_nullable
-                        as bool,
-            isInitial:
-                null == isInitial
-                    ? _value.isInitial
-                    : isInitial // ignore: cast_nullable_to_non_nullable
-                        as bool,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as AppException?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ) as $Val);
+  }
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppExceptionCopyWith<$Res>? get error {
+    if (_value.error == null) {
+      return null;
+    }
+
+    return $AppExceptionCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value) as $Val);
+    });
+  }
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -89,12 +106,16 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 abstract class _$$HomeStateImplCopyWith<$Res>
     implements $HomeStateCopyWith<$Res> {
   factory _$$HomeStateImplCopyWith(
-    _$HomeStateImpl value,
-    $Res Function(_$HomeStateImpl) then,
-  ) = __$$HomeStateImplCopyWithImpl<$Res>;
+          _$HomeStateImpl value, $Res Function(_$HomeStateImpl) then) =
+      __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, bool isError, bool isSuccess, bool isInitial});
+  $Res call({bool isLoading, AppException? error, User? user});
+
+  @override
+  $AppExceptionCopyWith<$Res>? get error;
+  @override
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -102,9 +123,8 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res, _$HomeStateImpl>
     implements _$$HomeStateImplCopyWith<$Res> {
   __$$HomeStateImplCopyWithImpl(
-    _$HomeStateImpl _value,
-    $Res Function(_$HomeStateImpl) _then,
-  ) : super(_value, _then);
+      _$HomeStateImpl _value, $Res Function(_$HomeStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -112,63 +132,45 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? isError = null,
-    Object? isSuccess = null,
-    Object? isInitial = null,
+    Object? error = freezed,
+    Object? user = freezed,
   }) {
-    return _then(
-      _$HomeStateImpl(
-        isLoading:
-            null == isLoading
-                ? _value.isLoading
-                : isLoading // ignore: cast_nullable_to_non_nullable
-                    as bool,
-        isError:
-            null == isError
-                ? _value.isError
-                : isError // ignore: cast_nullable_to_non_nullable
-                    as bool,
-        isSuccess:
-            null == isSuccess
-                ? _value.isSuccess
-                : isSuccess // ignore: cast_nullable_to_non_nullable
-                    as bool,
-        isInitial:
-            null == isInitial
-                ? _value.isInitial
-                : isInitial // ignore: cast_nullable_to_non_nullable
-                    as bool,
-      ),
-    );
+    return _then(_$HomeStateImpl(
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as AppException?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$HomeStateImpl implements _HomeState {
-  const _$HomeStateImpl({
-    this.isLoading = false,
-    this.isError = false,
-    this.isSuccess = false,
-    this.isInitial = false,
-  });
+  const _$HomeStateImpl(
+      {this.isLoading = false, this.error = null, this.user = null});
 
   @override
   @JsonKey()
   final bool isLoading;
   @override
   @JsonKey()
-  final bool isError;
+  final AppException? error;
   @override
   @JsonKey()
-  final bool isSuccess;
-  @override
-  @JsonKey()
-  final bool isInitial;
+  final User? user;
 
   @override
   String toString() {
-    return 'HomeState(isLoading: $isLoading, isError: $isError, isSuccess: $isSuccess, isInitial: $isInitial)';
+    return 'HomeState(isLoading: $isLoading, error: $error, user: $user)';
   }
 
   @override
@@ -178,16 +180,12 @@ class _$HomeStateImpl implements _HomeState {
             other is _$HomeStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.isError, isError) || other.isError == isError) &&
-            (identical(other.isSuccess, isSuccess) ||
-                other.isSuccess == isSuccess) &&
-            (identical(other.isInitial, isInitial) ||
-                other.isInitial == isInitial));
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoading, isError, isSuccess, isInitial);
+  int get hashCode => Object.hash(runtimeType, isLoading, error, user);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -199,21 +197,17 @@ class _$HomeStateImpl implements _HomeState {
 }
 
 abstract class _HomeState implements HomeState {
-  const factory _HomeState({
-    final bool isLoading,
-    final bool isError,
-    final bool isSuccess,
-    final bool isInitial,
-  }) = _$HomeStateImpl;
+  const factory _HomeState(
+      {final bool isLoading,
+      final AppException? error,
+      final User? user}) = _$HomeStateImpl;
 
   @override
   bool get isLoading;
   @override
-  bool get isError;
+  AppException? get error;
   @override
-  bool get isSuccess;
-  @override
-  bool get isInitial;
+  User? get user;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.

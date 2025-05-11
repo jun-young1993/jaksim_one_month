@@ -12,37 +12,48 @@ part of 'home_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initilize,
-  }) => throw _privateConstructorUsedError;
+    required TResult Function() clearError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initilize,
-  }) => throw _privateConstructorUsedError;
+    TResult? Function()? clearError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initilize,
+    TResult Function()? clearError,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initilize value) initilize,
-  }) => throw _privateConstructorUsedError;
+    required TResult Function(_ClearError value) clearError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initilize value)? initilize,
-  }) => throw _privateConstructorUsedError;
+    TResult? Function(_ClearError value)? clearError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initilize value)? initilize,
+    TResult Function(_ClearError value)? clearError,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -68,9 +79,8 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 /// @nodoc
 abstract class _$$InitilizeImplCopyWith<$Res> {
   factory _$$InitilizeImplCopyWith(
-    _$InitilizeImpl value,
-    $Res Function(_$InitilizeImpl) then,
-  ) = __$$InitilizeImplCopyWithImpl<$Res>;
+          _$InitilizeImpl value, $Res Function(_$InitilizeImpl) then) =
+      __$$InitilizeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -78,9 +88,8 @@ class __$$InitilizeImplCopyWithImpl<$Res>
     extends _$HomeEventCopyWithImpl<$Res, _$InitilizeImpl>
     implements _$$InitilizeImplCopyWith<$Res> {
   __$$InitilizeImplCopyWithImpl(
-    _$InitilizeImpl _value,
-    $Res Function(_$InitilizeImpl) _then,
-  ) : super(_value, _then);
+      _$InitilizeImpl _value, $Res Function(_$InitilizeImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -109,6 +118,7 @@ class _$InitilizeImpl implements _Initilize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initilize,
+    required TResult Function() clearError,
   }) {
     return initilize();
   }
@@ -117,6 +127,7 @@ class _$InitilizeImpl implements _Initilize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initilize,
+    TResult? Function()? clearError,
   }) {
     return initilize?.call();
   }
@@ -125,6 +136,7 @@ class _$InitilizeImpl implements _Initilize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initilize,
+    TResult Function()? clearError,
     required TResult orElse(),
   }) {
     if (initilize != null) {
@@ -137,6 +149,7 @@ class _$InitilizeImpl implements _Initilize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initilize value) initilize,
+    required TResult Function(_ClearError value) clearError,
   }) {
     return initilize(this);
   }
@@ -145,6 +158,7 @@ class _$InitilizeImpl implements _Initilize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initilize value)? initilize,
+    TResult? Function(_ClearError value)? clearError,
   }) {
     return initilize?.call(this);
   }
@@ -153,6 +167,7 @@ class _$InitilizeImpl implements _Initilize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initilize value)? initilize,
+    TResult Function(_ClearError value)? clearError,
     required TResult orElse(),
   }) {
     if (initilize != null) {
@@ -164,4 +179,109 @@ class _$InitilizeImpl implements _Initilize {
 
 abstract class _Initilize implements HomeEvent {
   const factory _Initilize() = _$InitilizeImpl;
+}
+
+/// @nodoc
+abstract class _$$ClearErrorImplCopyWith<$Res> {
+  factory _$$ClearErrorImplCopyWith(
+          _$ClearErrorImpl value, $Res Function(_$ClearErrorImpl) then) =
+      __$$ClearErrorImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClearErrorImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$ClearErrorImpl>
+    implements _$$ClearErrorImplCopyWith<$Res> {
+  __$$ClearErrorImplCopyWithImpl(
+      _$ClearErrorImpl _value, $Res Function(_$ClearErrorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ClearErrorImpl implements _ClearError {
+  const _$ClearErrorImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.clearError()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearErrorImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initilize,
+    required TResult Function() clearError,
+  }) {
+    return clearError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initilize,
+    TResult? Function()? clearError,
+  }) {
+    return clearError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initilize,
+    TResult Function()? clearError,
+    required TResult orElse(),
+  }) {
+    if (clearError != null) {
+      return clearError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initilize value) initilize,
+    required TResult Function(_ClearError value) clearError,
+  }) {
+    return clearError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initilize value)? initilize,
+    TResult? Function(_ClearError value)? clearError,
+  }) {
+    return clearError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initilize value)? initilize,
+    TResult Function(_ClearError value)? clearError,
+    required TResult orElse(),
+  }) {
+    if (clearError != null) {
+      return clearError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearError implements HomeEvent {
+  const factory _ClearError() = _$ClearErrorImpl;
 }
