@@ -1,12 +1,16 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_common/extensions/app_exception.dart';
+import 'package:flutter_common/state/app/app_bloc.dart';
+import 'package:flutter_common/state/app/app_event.dart';
 import 'package:jaksim_one_month/repository/home_repository.dart';
 import 'package:jaksim_one_month/state/home/home_event.dart';
 import 'package:jaksim_one_month/state/home/home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final HomeRepository repository;
-  HomeBloc({required this.repository}) : super(HomeState.initilize()) {
+  final AppBloc appBloc;
+  HomeBloc({required this.repository, required this.appBloc})
+      : super(HomeState.initilize()) {
     on<HomeEvent>(
       (event, emit) async {
         await event.map(
@@ -15,9 +19,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
               final user = await repository.getOrCreateUserInfo();
               emit(state.copyWith(user: user));
             });
-          },
-          clearError: (e) async {
-            emit(state.copyWith(isLoading: false, error: null));
           },
         );
       },
@@ -29,21 +30,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Future<T> Function() action, {
     AppException? defaultError,
   }) async {
-    emit(state.copyWith(isLoading: true));
+    appBloc.add(const AppEvent.setLoading(true));
     try {
       await action();
-
-      add(const HomeEvent.clearError());
+      appBloc.add(const AppEvent.clearError());
     } on AppException catch (e) {
       print('🔥 [ERROR] AppException: $e');
 
-      emit(state.copyWith(isLoading: false, error: e));
+      appBloc.add(AppEvent.setError(e));
     } catch (e) {
       print('🔥 [ERROR] Unknown error: $e');
-
-      emit(state.copyWith(
-          isLoading: false,
-          error: defaultError ?? AppException.unknown(e.toString())));
+      appBloc.add(AppEvent.setError(
+          defaultError ?? AppException.unknown(e.toString())));
     }
   }
 }

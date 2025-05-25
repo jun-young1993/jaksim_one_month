@@ -15,14 +15,15 @@ class BlocProviderWrapper extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AppConfigBloc(),
+          create: (context) => AppBloc(),
         ),
         BlocProvider(
-          create: (context) => AppBloc(),
+          create: (context) => AppConfigBloc(),
         ),
         BlocProvider(
           create: (context) => HomeBloc(
             repository: context.read<HomeRepository>(),
+            appBloc: context.read<AppBloc>(),
           ),
         ),
       ],
