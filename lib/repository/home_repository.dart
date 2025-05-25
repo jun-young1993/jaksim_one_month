@@ -1,5 +1,5 @@
 import 'package:flutter_common/models/index.dart';
-import 'package:jaksim_one_month/core/network/dio_client.dart';
+import 'package:flutter_common/network/dio_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class HomeRepository {

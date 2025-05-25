@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jaksim_one_month/exceptions/app_exception.dart';
+import 'package:flutter_common/extensions/app_exception.dart';
 import 'package:jaksim_one_month/state/home/home_bloc.dart';
 import 'package:jaksim_one_month/state/home/home_state.dart';
 

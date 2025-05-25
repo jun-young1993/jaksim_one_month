@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jaksim_one_month/exceptions/app_exception.dart';
+import 'package:flutter_common/extensions/app_exception.dart';
 import 'package:jaksim_one_month/repository/home_repository.dart';
 import 'package:jaksim_one_month/state/home/home_event.dart';
 import 'package:jaksim_one_month/state/home/home_state.dart';
