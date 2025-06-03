@@ -12,5 +12,5 @@ class HomeState with _$HomeState {
     @Default(null) User? user,
   }) = _HomeState;
 
-  factory HomeState.initilize() => const HomeState();
+  factory HomeState.initialize() => const HomeState();
 }

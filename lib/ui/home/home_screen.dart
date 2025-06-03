@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_common/state/goal/goal_bloc.dart';
+import 'package:flutter_common/state/goal/goal_event.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jaksim_one_month/state/home/home_bloc.dart';
 import 'package:jaksim_one_month/state/home/home_event.dart';
@@ -15,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   HomeBloc get homeBloc => context.read<HomeBloc>();
+  GoalBloc get goalBloc => context.read<GoalBloc>();
   int _selectedIndex = 0;
   final List<Map<String, dynamic>> _goals = [
     {
@@ -55,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    homeBloc.add(const HomeEvent.initilize());
+    homeBloc.add(const HomeEvent.initialize());
+    goalBloc.add(const GoalEvent.initialize());
   }
 
   @override
