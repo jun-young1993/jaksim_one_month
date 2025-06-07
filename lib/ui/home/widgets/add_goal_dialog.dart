@@ -11,7 +11,7 @@ class _AddGoalDialogState extends State<AddGoalDialog> {
   final _formKey = GlobalKey<FormState>();
   final _titleController = TextEditingController();
   int _duration = 30;
-  bool _isGroup = false;
+  final bool _isGroup = true;
   int _maxParticipants = 10;
   DateTime _startDate = DateTime.now();
 
@@ -114,19 +114,19 @@ class _AddGoalDialogState extends State<AddGoalDialog> {
               ),
               const SizedBox(height: 16),
               // 그룹 설정
-              SwitchListTile(
-                title: const Text('그룹 목표로 설정'),
-                subtitle: Text(
-                  _isGroup ? '다른 사람들과 함께 목표를 달성해보세요' : '개인 목표로 설정됩니다',
-                ),
-                value: _isGroup,
-                onChanged: (value) {
-                  setState(() {
-                    _isGroup = value;
-                  });
-                },
-              ),
-              if (_isGroup) ...[
+              // SwitchListTile(
+              //   title: const Text('그룹 목표로 설정'),
+              //   subtitle: Text(
+              //     _isGroup ? '다른 사람들과 함께 목표를 달성해보세요' : '개인 목표로 설정됩니다',
+              //   ),
+              //   value: _isGroup,
+              //   onChanged: (value) {
+              //     setState(() {
+              //       _isGroup = value;
+              //     });
+              //   },
+              // ),
+              ...[
                 const SizedBox(height: 16),
                 DropdownButtonFormField<int>(
                   value: _maxParticipants,
